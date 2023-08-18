@@ -23,7 +23,7 @@ body{
     display : flex;
     flex-direction: column;
     gap: 30px;
-    height : 400px;
+    height : 450px;
     background: rgba(255, 255, 255, 0.15);
     backdrop-filter: blur(10px);
     border-radius: 10px;
@@ -84,20 +84,20 @@ body{
 
 .navbtn #next{
     position: absolute;
-    top: 400px;
+    top: 460px;
    
 }
 
 .navbtn #Restart{
     position: absolute;
-    top: 400px;
+    top: 460px;
     left: 120px;
    
 }
 
 .navbtn #submit{
     position: absolute;
-    top: 400px;
+    top: 460px;
     left: 200px;
    
 }
@@ -131,4 +131,8 @@ body{
 
 #playAgain{
     display: none ;
+}
+
+.app .instruction{
+    color: rgb(21, 67, 25)!important;
 }
