@@ -273,6 +273,8 @@ let next = () => {
   // Check if all questions have been answered
   if (currentQuestionIndex === questions.length) {
     // Update UI for end of quiz
+      submitbtn.style.display="none"
+
     quiz[0].style.display = "none";
     nextButton.style.display = "none";
     restartButton.style.display = "none";
