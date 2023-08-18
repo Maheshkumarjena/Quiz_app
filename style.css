@@ -18,6 +18,50 @@ body{
   align-items: center;
 }
 
+
+.logo{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    bottom: 20px;
+    right: 50px;
+    height: 60px;
+    
+}
+
+.logo::before {
+    content: "";
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+    border:  transparent; /* Initial border */
+    border-radius: 10px;
+    animation: neonBorder 1.5s infinite alternate; /* Neon animation */
+}
+
+@keyframes neonBorder {
+    from {
+        border-color: transparent;
+        box-shadow: 0 0 5px rgba(19, 20, 19, 0.7), 0 0 10px yellow transparent;
+    }
+    to {
+        border-color: transparent;
+        box-shadow: 0 0 20px #f2c9dd, 0 0 30px #2f325b;
+    }
+}
+
+.logo img{
+    align-self: center;
+    width: 60px;
+    height: 40px;
+}
+.logo h6{
+    font-family: 'Pacifico', cursive;
+}
+
+
 .app{
 
     display : flex;
