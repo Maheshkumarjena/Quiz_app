@@ -101,16 +101,6 @@ const questions = [
   },
 
   {
-    question: "What is the largest living animal on Planet Earth?",
-    answers: [
-      { text: "Shark", correct: false },
-      { text: "Blue Whale", correct: true },
-      { text: "Elephant", correct: false },
-      { text: "Anaconda", correct: false },
-    ],
-  },
-
-  {
     question: "What is the smallest prime number?",
     answers: [
       { text: "0", correct: false },
@@ -212,14 +202,13 @@ const questions = [
   },
 ];
 
-
 // Select HTML elements with the class names "question" and "btn"
 const questionElement = document.getElementsByClassName("question");
 const answerButton = document.getElementsByClassName("btn");
 
+let answerChecked = false;
 let currentQuestionIndex = 0;
 let score = 0;
-let currentQuestion = questions[currentQuestionIndex];
 
 // Function to initialize and display the current question and answer options
 let startQuiz = () => {
@@ -238,11 +227,9 @@ let startQuiz = () => {
 };
 
 // Function to check the selected answer and update the score and UI
+
 function checkAnswer(e) {
-let currentQuestionIndex = 0;
-
-let currentQuestion = questions[currentQuestionIndex];
-
+  let currentQuestion = questions[currentQuestionIndex];
   const selectedAnswer = currentQuestion.answers[e];
   if (selectedAnswer.correct) {
     answerButton[e].classList.add("correct");
@@ -262,7 +249,8 @@ let currentQuestion = questions[currentQuestionIndex];
   for (let i = 0; i < 4; i++) {
     answerButton[i].disabled = true;
   }
-  currentQuestionIndex++
+  currentQuestionIndex++;
+  answerChecked = true;
 }
 
 // Select the "Next" button and add an event listener to proceed to the next question
@@ -274,10 +262,11 @@ let quiz = document.getElementsByClassName("quiz");
 
 // Function to proceed to the next question
 let next = () => {
+  let currentQuestion = questions[currentQuestionIndex];
+
   for (let i = 0; i < 4; i++) {
     answerButton[i].disabled = false;
   }
-  
   // Check if all questions have been answered
   if (currentQuestionIndex === questions.length) {
     // Update UI for end of quiz
@@ -289,16 +278,21 @@ let next = () => {
     scoreButton[0].innerHTML = `Your score is ${score} out of ${questions.length}`;
     currentQuestionIndex = 0;
   }
-  
+  if (!answerChecked) {
+    // If answer not checked, increment the currentQuestionIndex
+    currentQuestionIndex++;
+    console.log(currentQuestionIndex);
+  }
+  answerChecked = false;
+  currentQuestion = questions[currentQuestionIndex];
   // Move to the next question and update UI
-  currentQuestionIndex++;
   startQuiz();
+  console.log(currentQuestionIndex);
 };
 
 // Function to restart the quiz
 let restart = () => {
   currentQuestionIndex = 0;
-  currentQuestion = questions[currentQuestionIndex];
   startQuiz();
 };
 
@@ -306,20 +300,40 @@ let restart = () => {
 let playAgain = () => {
   currentQuestionIndex = 0;
   quiz[0].style.display = "inline";
-  playAgainButton.style.display = 'none';
+  playAgainButton.style.display = "none";
   nextButton.style.display = "block";
   restartButton.style.display = "flex";
-  
+  submitbtn.style.display = "block"
+
   // Reset answer buttons and enable them
   for (let i = 0; i < 4; i++) {
     answerButton[i].classList.remove("correct");
     answerButton[i].classList.remove("incorrect");
     answerButton[i].disabled = false;
   }
-  
+  score = 0;
+  scoreButton[0].style.display = "none";
+
   // Start the quiz with the first question
   startQuiz();
 };
 
+let submitbtn=document.getElementById('submit')
+console.log(submitbtn)
+
+let submit=()=>{
+  submitbtn.style.display = "none"
+  quiz[0].style.display = "none";
+  nextButton.style.display = "none";
+  restartButton.style.display = "none";
+  playAgainButton.style.display = "block";
+  scoreButton[0].style.display = "block";
+  scoreButton[0].innerHTML = `Your score is ${score} out of ${questions.length}`;
+  currentQuestionIndex = 0;
+
+
+}
+
 // Start the quiz by displaying the first question
 startQuiz();
+// console.log(questions.length);
