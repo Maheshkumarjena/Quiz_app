@@ -274,7 +274,8 @@ let next = () => {
     answerButton[i].disabled = false;
   }
   // Check if all questions have been answered
-  if (currentQuestionIndex === questions.length) {
+  let questionNo=currentQuestionIndex+1;
+  if (questionNo  === questions.length) {
     // Update UI for end of quiz
       submitbtn.style.display="none"
 
