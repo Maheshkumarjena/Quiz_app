@@ -1,0 +1,115 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    width:100vw;
+    height: 100vh;
+    background-color: gradient(linear, left top, left bottom);
+    background: 
+    linear-gradient(to right, gray, gray),
+    linear-gradient(to right, rgb(153, 231, 239), rgb(153, 231, 239));
+  background-size: 50% 100%, 50% 100%;
+  background-repeat: no-repeat;
+  background-position: left, right;
+  display: flex;
+  /* flex-direction: column; */
+  justify-content: center;
+  align-items: center;
+}
+
+.app{
+
+    display : flex;
+    flex-direction: column;
+    gap: 30px;
+    height : fit-content;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    padding: 40px;
+    width: 400px;
+    margin: auto;
+    margin-top: 50px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+}
+
+.app h1{
+
+    width: 100%;
+    padding-bottom:20px;
+    border-bottom: 2px solid black;
+
+}
+.question{
+    padding-bottom: 15px;
+}
+.options{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.btn{
+    background: linear-gradient(135deg, rgb(153, 231, 239), gray);
+    padding: 8px 0px 8px 0px;
+    border: none;
+    outline: none !important;
+    border-radius: 4px;
+    width: 100%;
+    display: flex;
+    justify-content: start;
+    padding-left: 10px;
+    transition: transform 0.2s ease;
+
+}
+
+.btn:hover,.navbtn button:hover{
+    background-color: rgb(153, 231, 239);
+    transform: scale(1.05);
+    /* animation: btnScale 1.05s ease; */
+
+}
+
+.btn:active,.navbtn button:active{
+    background-color: rgb(153, 231, 239);
+    transform: scale(0.95);
+}
+
+
+.navbtn{
+    display: flex;
+    flex-direction: row;
+}
+
+
+.navbtn button{
+    width:fit-content;
+    padding: 0px 10px 0px 10px;
+    min-width: 60px;
+    margin-inline-end: 10px;
+    height: 30px;
+    border-radius: 5px;
+    outline: none ;
+    border: none ;
+    transition: transform 0.2s ease;
+    align-items: center;
+
+}
+
+.correct{
+    /* font-size: 40px; */
+    background: rgb(78, 252, 78) !important;
+    /* color */
+}
+.incorrect{
+    background: rgb(236, 91, 91) !important;
+}
+
+.score{
+    display: none;
+}
+
+#playAgain{
+    display: none ;
+}
