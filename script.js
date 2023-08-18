@@ -258,7 +258,10 @@ const nextButton = document.getElementById("next");
 const restartButton = document.getElementById("Restart");
 const playAgainButton = document.getElementById("playAgain");
 const scoreButton = document.getElementsByClassName("score");
+let inst=document.getElementsByClassName("instruction")
+inst=inst[0];
 let quiz = document.getElementsByClassName("quiz");
+
 
 // Function to proceed to the next question
 let next = () => {
@@ -277,6 +280,7 @@ let next = () => {
     scoreButton[0].style.display = "block";
     scoreButton[0].innerHTML = `Your score is ${score} out of ${questions.length}`;
     currentQuestionIndex = 0;
+    inst.style.display = "none";
   }
   if (!answerChecked) {
     // If answer not checked, increment the currentQuestionIndex
@@ -304,6 +308,7 @@ let playAgain = () => {
   nextButton.style.display = "block";
   restartButton.style.display = "flex";
   submitbtn.style.display = "block"
+  inst.style.display = "block";
 
   // Reset answer buttons and enable them
   for (let i = 0; i < 4; i++) {
@@ -322,6 +327,7 @@ let submitbtn=document.getElementById('submit')
 console.log(submitbtn)
 
 let submit=()=>{
+  inst.style.display = "none";
   submitbtn.style.display = "none"
   quiz[0].style.display = "none";
   nextButton.style.display = "none";
@@ -330,6 +336,7 @@ let submit=()=>{
   scoreButton[0].style.display = "block";
   scoreButton[0].innerHTML = `Your score is ${score} out of ${questions.length}`;
   currentQuestionIndex = 0;
+
 
 
 }
