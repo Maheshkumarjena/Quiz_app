@@ -9,15 +9,6 @@ const questions = [
     ],
   },
 
-  {
-    question: 'Which planet is known as the "Red Planet"?',
-    answers: [
-      { text: "Mars", correct: true },
-      { text: "Jupiter", correct: false },
-      { text: "Venus", correct: false },
-      { text: "Mercury", correct: false },
-    ],
-  },
 
   {
     question: "What is the symbol for the chemical element oxygen?",
@@ -26,16 +17,6 @@ const questions = [
       { text: "Oi", correct: false },
       { text: "Xy", correct: false },
       { text: "Om", correct: false },
-    ],
-  },
-
-  {
-    question: "Which gas is most abundant in Earths atmosphere?",
-    answers: [
-      { text: "Carbon dioxide", correct: false },
-      { text: "Nitrogen", correct: true },
-      { text: "Oxygen", correct: false },
-      { text: "Argon", correct: false },
     ],
   },
 
@@ -68,6 +49,37 @@ const questions = [
       { text: "Saturn", correct: false },
     ],
   },
+
+  {
+    question: "What is the largest type of big cat in the world?",
+    answers: [
+      { text: "Lion", correct: false },
+      { text: "Tiger", correct: true },
+      { text: "Leopard", correct: false },
+      { text: "Cheetah", correct: false },
+    ],
+  },
+
+  {
+    question: "Which gas is necessary for respiration in humans?",
+    answers: [
+      { text: "Oxygen", correct: true },
+      { text: "Carbon dioxide", correct: false },
+      { text: "Nitrogen", correct: false },
+      { text: "Helium", correct: false },
+    ],
+  },
+
+  {
+    question: "What is the process by which plants make their own food using sunlight?",
+    answers: [
+      { text: "Respiration", correct: false },
+      { text: "Photosynthesis", correct: true },
+      { text: "Transpiration", correct: false },
+      { text: "Fermentation", correct: false },
+    ],
+  },
+
 
   {
     question:
@@ -140,15 +152,6 @@ const questions = [
     ],
   },
 
-  {
-    question: 'Which planet is known as the "Evening Star"?',
-    answers: [
-      { text: "Mars", correct: false },
-      { text: "Venus", correct: true },
-      { text: "Mercury", correct: false },
-      { text: "Jupiter", correct: false },
-    ],
-  },
 
   {
     question: "What is the largest moon in our solar system?",
