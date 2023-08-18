@@ -3,7 +3,7 @@
     padding: 0;
 }
 body{
-    width:100vw;
+    width:100vw; 
     height: 100vh;
     background-color: gradient(linear, left top, left bottom);
     background: 
@@ -23,7 +23,7 @@ body{
     display : flex;
     flex-direction: column;
     gap: 30px;
-    height : fit-content;
+    height : 400px;
     background: rgba(255, 255, 255, 0.15);
     backdrop-filter: blur(10px);
     border-radius: 10px;
@@ -82,6 +82,25 @@ body{
     flex-direction: row;
 }
 
+.navbtn #next{
+    position: absolute;
+    top: 400px;
+   
+}
+
+.navbtn #Restart{
+    position: absolute;
+    top: 400px;
+    left: 120px;
+   
+}
+
+.navbtn #submit{
+    position: absolute;
+    top: 400px;
+    left: 200px;
+   
+}
 
 .navbtn button{
     width:fit-content;
